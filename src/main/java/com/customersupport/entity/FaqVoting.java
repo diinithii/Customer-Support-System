@@ -1,10 +1,10 @@
 package com.customersupport.entity;
+
 import jakarta.persistence.*;
+import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "faq_voting")
@@ -12,30 +12,31 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FaqVoting {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "faq_id", nullable = false)
-    private Faq faq;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "faq_id", nullable = false)
+  private Faq faq;
 
-    @Column(name = "session_id")
-    private String sessionId; // For anonymous voting
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "user_id")
+  private User user;
 
-    @Column(name = "is_helpful", nullable = false)
-    private Boolean isHelpful;
+  @Column(name = "session_id")
+  private String sessionId; // For anonymous voting
 
-    @Column(name = "feedback")
-    private String feedback;
+  @Column(name = "is_helpful", nullable = false)
+  private Boolean isHelpful;
 
-    @Column(name = "created_at")
-    private LocalDateTime createdAt = LocalDateTime.now();
+  @Column(name = "feedback")
+  private String feedback;
 
-    @Column(name = "ip_address")
-    private String ipAddress;
+  @Column(name = "created_at")
+  private LocalDateTime createdAt = LocalDateTime.now();
+
+  @Column(name = "ip_address")
+  private String ipAddress;
 }

@@ -71,7 +71,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
-        <!-- Spring Boot Actuator for Monitoring -->
+                <!-- Spring Boot Actuator for Monitoring -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -147,12 +147,13 @@
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
-        <!-- H2 Database for local in-memory execution -->
+
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
+            <groupId>com.openhtmltopdf</groupId>
+            <artifactId>openhtmltopdf-pdfbox</artifactId>
+            <version>1.0.10</version>
         </dependency>
+
 
     </dependencies>
 
